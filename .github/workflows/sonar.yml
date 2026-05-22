@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   sonar:
     runs-on: ubuntu-latest
@@ -21,6 +24,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Verify LCOV exists
+        run: |
+          ls -la coverage
+          cat coverage/lcov.info | head -20
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5
