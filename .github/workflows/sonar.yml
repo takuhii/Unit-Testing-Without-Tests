@@ -22,15 +22,12 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Verify LCOV exists
         run: |
-          ls -la coverage
-          cat coverage/lcov.info | head -20
+          test -f coverage/lcov.info
+          head -20 coverage/lcov.info
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v5
+        uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
