@@ -1,0 +1,21 @@
+{
+  "name": "unit-testing-without-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:takuhii/Unit-Testing-Without-Tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
