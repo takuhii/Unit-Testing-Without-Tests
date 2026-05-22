@@ -81,6 +81,18 @@ export function calculateBasketTotal(
   };
 }
 
+export function isBasketEmpty(items: BasketItem[]): boolean {
+  return items.length === 0;
+}
+
+export function calculateItemCount(items: BasketItem[]): number {
+  return items.reduce((total, item) => total + item.quantity, 0);
+}
+
+export function hasDiscount(discount?: DiscountCode): boolean {
+  return !!discount?.active;
+}
+
 function validateItem(item: BasketItem): void {
   if (!item.id || item.id.trim().length === 0) {
     throw new Error("Item ID is required");
